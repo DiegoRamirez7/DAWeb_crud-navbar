@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+<div class="row"><!-- fila en editar -->
+    <div class="col-md-4 offset-md-4">
+        <h2></h2>
+        <!-- Aqui codigo tarjeta -->
+        <div class="card"><!--La tarjeta-->
+            <div class="card-body">
+                <form action="/editarCat/" method="POST">{% csrf_token %}<!--Falta action-->
+                    <div class="form-group">
+                        <input type="text" id="txtcodigo" name="txtcodigo" class="form-control"
+                        placeholder="id categoria " value="{{miscategorias.codigo}}" minlength="1" maxLenght="6" required><br>
+                    </div>
+                    <div>
+                        <input type="text" id="txtnombre" name="txtnombre" class="form-control"
+                        placeholder="nombre de categoria" value="{{miscategorias.nombre}}" minlength="1" maxLenght="6" required><br>
+                    </div>
+                    <div>
+                        <input type="text" id="txtdescripcion" name="txtdescripcion" class="form-control"
+                        placeholder="descripcion" value="{{miscategorias.descripcion}}" minlength="1" maxLenght="6" required><br>
+                      </div>
+                      <div>
+                        <input type="text" id="txtfecha" name="txtfecha" class="form-control"
+                        placeholder="fecha de creacion" value="{{miscategorias.fecha}}" minlength="1" maxLenght="6" required><br>
+                      </div>
+                      <div>
+                        <input type="text" id="txtactivo" name="txtactivo" class="form-control"
+                        placeholder="activo" value="{{miscategorias.activo}}" minlength="1" maxLenght="6" required><br>
+                      </div>
+                      <div>
+                        <input type="text" id="txtprioridad" name="txtprioridad" class="form-control"
+                        placeholder="prioridad" value="{{miscategorias.prioridad}}" minlength="1" maxLenght="6" required><br>
+                      </div>
+                      <div>
+                        <input type="text" id="txtnumc" name="txtnumc" class="form-control"
+                        placeholder="id padre" value="{{miscategorias.numc}}" minlength="1" maxLenght="6" required><br>
+                      </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-primary">Guardar categoria</button>
+                    </div>
+                </form>
+            </div>
+        </div><!--La tarjeta-->
+        <!-- Aqui codigo tarjeta -->
+    </div>
+</div><!-- fila en editar -->
+
+
+
+
+{% endblock %}
