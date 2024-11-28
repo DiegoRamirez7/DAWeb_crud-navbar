@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+<div class="row"><!-- fila en editar -->
+    <div class="col-md-4 offset-md-4">
+        <h2>Editar </h2>
+        <!-- Aqui codigo tarjeta -->
+        <div class="card"><!--La tarjeta-->
+            <div class="card-body">
+                <form action="/editarProducto/" method="POST">{% csrf_token %}<!--Falta action-->
+                    <div class="form-group">
+                        <input type="text" id="txtcodigo" name="txtcodigo" class="form-control"
+                        placeholder="id producto" value="{{misventas.codigo}}" minlength="1" maxLenght="6" required><br>
+                    </div>
+                    <div>
+                        <input type="text" id="txtnombre" name="txtnombre" class="form-control"
+                        placeholder="nombre del producto" value="{{misventas.nombre}}" minlength="1" maxLenght="6" required><br>
+                    </div>
+                    <div>
+                        <input type="text" id="txtprecio" name="txtprecio" class="form-control"
+                        placeholder="precio del producto" value="{{misventas.precio}}" minlength="1" maxLenght="6" required><br>
+                    </div>           
+                        <input type="text" id="txtfecha" name="txtfecha" class="form-control"
+                        placeholder="fecha de ingreso" value="{{misventas.fecha}}" minlength="1" maxLenght="6" required><br>
+                    </div>
+                    <div>
+                        <input type="text" id="txtdescripcion" name="txtdescripcion" class="form-control"
+                        placeholder="descripcion" value="{{misventas.descripcion}}" minlength="1" maxLenght="6" required><br>
+                    </div>
+                    <div>
+                        <input type="text" id="txtcategoria" name="txtcategoria" class="form-control"
+                        placeholder="categoria" value="{{misventas.categoria}}" minlength="1" maxLenght="6" required><br>
+                    </div>
+                    <div>
+                        <input type="text" id="txtstock" name="txtstock" class="form-control"
+                        placeholder="no productos en stock" value="{{misventas.stock}}" minlength="1" maxLenght="6" required><br>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-primary">Guardar producto</button>
+                    </div>
+                </form>
+            </div>
+        </div><!--La tarjeta-->
+        <!-- Aqui codigo tarjeta -->
+    </div>
+</div><!-- fila en editar -->
+
+
+
+
+{% endblock %}
